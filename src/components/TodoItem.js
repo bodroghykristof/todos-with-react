@@ -24,7 +24,7 @@ export class TodoItem extends Component {
             style={deleteButtonStyle}
             onClick={this.props.deleteTodo.bind(this, id)}
           >
-            Delete
+            X
           </button>
         </p>
       </div>
@@ -37,9 +37,12 @@ TodoItem.propTypes = {
 };
 
 const deleteButtonStyle = {
-  backgroundColor: '#ccc',
-  padding: '1px',
-  margin: '3px',
+  backgroundColor: 'red',
+  color: 'white',
+  fontWeight: 'bold',
+  marginRight: '10px',
+  float: 'right',
+  borderRadius: '50%',
 };
 
 export default TodoItem;
