@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import axios from 'axios';
 import Todos from './components/Todos/Todos';
 import Header from './components/Layout/Header';
 import AddTodo from './components/Todos/AddTodo';
 import About from './components/Pages/About';
 
 class App extends Component {
+  componentDidMount = () => {
+    axios
+      .get('https://jsonplaceholder.typicode.com/posts?_limit=10')
+      .then((response) => (this.state.todos = response.data));
+  };
+
   markComplete = (id) => {
     this.setState({
       todos: this.state.todos.map((todo) => {
@@ -24,25 +31,7 @@ class App extends Component {
     });
   };
 
-  state = {
-    todos: [
-      {
-        id: 1,
-        title: 'Take out the trash',
-        completed: true,
-      },
-      {
-        id: 2,
-        title: 'Dinner with wife',
-        completed: false,
-      },
-      {
-        id: 3,
-        title: 'Feed the pets',
-        completed: false,
-      },
-    ],
-  };
+  state = {};
 
   addTodo = (title) => {
     this.setState({
