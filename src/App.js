@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Todos from './components/Todos/Todos';
 import Header from './components/Layout/Header';
 import AddTodo from './components/Todos/AddTodo';
+import About from './components/Pages/About';
 
 class App extends Component {
   markComplete = (id) => {
@@ -72,6 +73,7 @@ class App extends Component {
                 </React.Fragment>
               )}
             />
+            <Route exact path="/about" component={About}/>
           </div>
         </div>
       </Router>
