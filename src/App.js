@@ -3,12 +3,23 @@ import './App.css';
 import Todos from './components/Todos';
 
 class App extends Component {
+  markComplete = (id) => {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      }),
+    });
+  };
+
   state = {
     todos: [
       {
         id: 1,
         title: 'Take out the trash',
-        completed: false,
+        completed: true,
       },
       {
         id: 2,
@@ -26,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} markComplete={this.markComplete} />
       </div>
     );
   }
