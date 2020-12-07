@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import '../App.css';
+import '../../App.css';
 import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
 
