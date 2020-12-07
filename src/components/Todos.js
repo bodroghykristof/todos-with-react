@@ -2,7 +2,7 @@ import { Component } from 'react';
 import '../App.css';
 
 class Todos extends Component {
-  redner() {
+  render() {
     return (
       <div>
         <h1>Todos</h1>
