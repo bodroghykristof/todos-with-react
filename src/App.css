@@ -13,3 +13,9 @@ a {
   color: #333;
   text-decoration: none;
 }
+
+.container {
+  padding: 0 1rem;
+  width: 75%;
+  margin-left: 12.5%;
+}

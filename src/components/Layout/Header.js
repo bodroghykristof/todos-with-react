@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-function Header() {
+export default function Header() {
   return (
     <header style={headerStyle}>
       <h1>TODO List</h1>
@@ -14,5 +14,3 @@ const headerStyle = {
   padding: '10px',
   fontSize: '150%',
 };
-
-export default Header;
