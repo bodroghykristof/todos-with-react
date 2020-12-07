@@ -11,7 +11,7 @@ export class TodoItem extends Component {
   };
 
   render() {
-    const { id, title } = this.props.todo;
+    const { id } = this.props.todo;
     return (
       <div style={this.getStyle()}>
         <p>
@@ -43,6 +43,12 @@ const deleteButtonStyle = {
   marginRight: '10px',
   float: 'right',
   borderRadius: '50%',
+};
+
+TodoItem.propTypes = {
+  todo: PropTypes.object.isRequired,
+  markComplete: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
